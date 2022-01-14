@@ -59,8 +59,35 @@ input {
 input:hover {
     background: #aaa8a82b;
 }
-h1,
-h2,
+body h3 {
+    margin: 0.2em 0;
+}
+h2.temp {
+    font-weight: 900;
+    font-size: 2.5em;
+    margin: 0.5em 0;
+}
+
 h3 {
     font-weight: 800;
+}
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flex img {
+    order: 1;
+}
+.weather.loading {
+    visibility: hidden;
+}
+
+.weather.loading::after {
+    visibility: visible;
+}
+
+
+.hide {
+    display: none;
 }
