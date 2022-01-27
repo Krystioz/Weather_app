@@ -1,6 +1,7 @@
 const input = document.querySelector(".search-bar");
 const btn = document.querySelector(".btn");
 let imageElement = document.querySelector("body");
+import key from "./secrets.js";
 const clientID = key;
 
 btn.addEventListener("click", function (event) {
@@ -65,16 +66,23 @@ let weatherApi = {
         const { icon, description } = data.weather[0];
         const { temp, humidity } = data.main;
         const { speed } = data.wind;
-        document.querySelector(".city").innerHTML = "Weather in " + name;
+        document.querySelector(".city").innerHTML =
+            "Weather in " + name;
         document.querySelector(".icon").src =
-            "https://openweathermap.org/img/wn/" + icon + ".png";
-        document.querySelector(".description").innerHTML = description;
-        document.querySelector(".temp").innerHTML = Math.floor(temp) + " °C";
+            "https://openweathermap.org/img/wn/" +
+            icon +
+            ".png";
+        document.querySelector(".description").innerHTML =
+            description;
+        document.querySelector(".temp").innerHTML =
+            Math.floor(temp) + " °C";
         document.querySelector(".humidity").innerHTML =
             "Humidity: " + humidity + "%";
         document.querySelector(".wind").innerHTML =
             "Wind speed: " + speed + " km/h";
-            document.querySelector(".weather").classList.remove("loading")
-            document.querySelector('.hd').classList.add("hide");
+        document
+            .querySelector(".weather")
+            .classList.remove("loading");
+        document.querySelector(".hd").classList.add("hide");
     },
 };
